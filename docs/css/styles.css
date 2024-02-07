@@ -1,0 +1,28 @@
+/* google font */
+@import url('https://fonts.googleapis.com/css2?family=Syne&display=swap');
+
+
+*,
+*::after,
+*::before {
+	box-sizing: border-box;
+	margin: 0;
+	padding: 0;
+}
+
+:root {
+	/* color variables */
+	--main-color: #fdf4e2;
+	--main-bg-color: #f5f5f5;
+	--main-font-color: #2d2d2d;
+
+	/* font variables */
+	--main-font-family: 'Syne', sans-serif;
+}
+
+body {
+	font-family: var(--main-font-family);
+	color: var(--main-font-color);
+	background-color: var(--main-bg-color);
+	padding: 10px;
+}
