@@ -1,7 +1,7 @@
 /* google font */
-@import url('https://fonts.googleapis.com/css2?family=Syne&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Questrial&family=Syne:wght@400;500;600;700&display=swap');
 
-
+/* reset */
 *,
 *::after,
 *::before {
@@ -10,19 +10,108 @@
 	padding: 0;
 }
 
+/* variables */
 :root {
 	/* color variables */
-	--main-color: #fdf4e2;
-	--main-bg-color: #f5f5f5;
-	--main-font-color: #2d2d2d;
-
+	--main-color: #131211;
+	--main-bg-color: #AEAE9D;
+    
 	/* font variables */
 	--main-font-family: 'Syne', sans-serif;
+    --footer-font-family: 'Questrial', sans-serif;
+	--main-font-color: #131211;
 }
 
+/* global styles */
 body {
 	font-family: var(--main-font-family);
-	color: var(--main-font-color);
+    line-height: 1.5;
 	background-color: var(--main-bg-color);
-	padding: 10px;
+	color: var(--main-font-color);
+}
+
+ul {
+    list-style: none;
+}
+
+h1 {
+    font-weight: bold;
+}
+
+a {
+    text-decoration: none;
+    color: var(--main-font-color);
+}
+
+/* nav bar styling */
+header {
+    padding: 10px;
+}
+
+header nav ul {
+    display: flex;
+    padding: 10px;
+}
+
+header nav ul li {
+    margin-right: 50px;
+}
+
+/* main styling */
+main {
+    height: 90vh;
+    margin: 20px;
+}
+
+main section {
+    margin-bottom: 20px;
+}
+
+main section.loading {
+    display: none;
+    justify-content: center;
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+}
+
+main section.error {
+    display: none;
+}
+
+main section.showcase ul {
+    display: flex;
+    justify-content: space-evenly;
+    padding: 10px;
+}
+
+main section.showcase ul li {
+    background-color: whitesmoke;
+    width: 50%;
+    min-height: 200px;
+    margin: 10px;
+    padding: 15px;
+    border-radius: 10px;
+}
+
+main section.showcase ul li:hover {
+    background-color: red;
+    transform: scale(1.05);
+}
+
+/* footer styling */
+footer {
+    padding: 10px;
+    width: 100%;
+    text-align: center;
+    font-family: var(--footer-font-family);
+}
+
+footer section {
+    display: flex;
+    justify-content: center;
+}
+
+footer p {
+    width: 50%;
 }
