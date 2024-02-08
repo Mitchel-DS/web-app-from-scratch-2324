@@ -140,14 +140,25 @@ main section.loading h1, main section.loading h2 {
 main section.error {
     display: none;
     flex-direction: column;
+    justify-content: center;
     position: fixed;
     top: 0;
     width: 100%;
     height: 100%;
     background-color: white;
-    justify-content: center;
     align-items: center;
     z-index: 9999;
+}
+
+main section.error button {
+    padding: 10px 40px 10px 40px;
+    border: none;
+    outline: none;
+    background-color: black;
+    color: white;
+    cursor: pointer;
+    border-radius: 30px;
+    margin-top: 10px;
 }
 
 main section.introduction {
