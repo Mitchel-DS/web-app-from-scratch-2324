@@ -1,5 +1,6 @@
 /* google font */
 @import url('https://fonts.googleapis.com/css2?family=Questrial&family=Syne:wght@400;500;600;700&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,700;0,800;1,800;1,900&display=swap');
 
 /* reset */
 *,
@@ -18,6 +19,7 @@
     
 	/* font variables */
 	--main-font-family: 'Syne', sans-serif;
+    --test-font-family: 'Montserrat', sans-serif;
     --footer-font-family: 'Questrial', sans-serif;
 	--main-font-color: #131211;
 }
@@ -84,7 +86,7 @@ main section {
 
 /* states styling */
 main section.loading {
-    display: flex;
+    display: none;
     flex-direction: column;
     position: fixed;
     top: 0;
@@ -158,7 +160,17 @@ main section.introduction {
 
 main section.introduction h1 {
     font-size: 100px;
+    font-family: var(--test-font-family);
+    font-weight: 800;
+    line-height: .8;
 }
+
+main section.introduction h2 {
+    font-size: 50px;
+    font-family: var(--test-font-family);
+}
+
+
 
 main section.showcase {
     margin: 20px;
@@ -182,10 +194,18 @@ main section.showcase ul li {
 main section.showcase ul li:hover {
     /* background-color: red; */
     transform: scale(1.05);
+    box-shadow: rgba(0, 0, 0, 0.35) 0px 5px 15px;
 }
 
 main section.aboutme {
     margin: 20px;
+    display: flex;
+}
+
+main section.aboutme img {
+    width: 500px;
+    border-radius: 10px;
+    padding: 10px;
 }
 
 button.test {
