@@ -86,7 +86,7 @@ main section {
 
 /* states styling */
 main section.loading {
-    display: none;
+    display: flex;
     flex-direction: column;
     position: fixed;
     top: 0;
@@ -106,6 +106,7 @@ main section.loading h1, main section.loading h2 {
     animation: hover 1.6s ease-in-out;
     color: white;
     font-size: 30px;
+    font-family: var(--test-font-family);
 }
 
 @keyframes lift {
