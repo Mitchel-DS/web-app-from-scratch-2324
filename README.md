@@ -24,4 +24,5 @@ Check out the live demo [here.](https://mitchel-ds.github.io/web-app-from-scratc
 ![version 2.2](./docs/assets/images/version_2.2.png)
 ![version 2.3](./docs/assets/images/version_2.3.png)
 splash screen
+![version 2.4](./docs/assets/images/version_2.4.png)
 

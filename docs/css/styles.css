@@ -14,17 +14,28 @@
 /* variables */
 :root {
 	/* color variables */
-	--main-color: #131211;
-	--main-bg-color: #AEAE9D;
+	--main-color: #393632;
+	--main-bg-color: #d1d1c7;
+    --light-container-bg-color: #e1e1db;
     
 	/* font variables */
-	--main-font-family: 'Syne', sans-serif;
+	--main-font-family: 'Questrial', sans-serif;
     --test-font-family: 'Montserrat', sans-serif;
     --footer-font-family: 'Questrial', sans-serif;
-	--main-font-color: #131211;
+
+	--main-font-color: #393632;
+    --light-header-font-color: #d1d1c7;
+    --light-paragraph-font-color: #a29e9a;
+    --dark-paragraph-font-color: #6b645c;
+    --copyright-font-color: #080807;
+    --alt-font-color: #bfbfb1;
 }
 
 /* global styles */
+html {
+    scroll-behavior: smooth;
+}
+
 body {
 	font-family: var(--main-font-family);
     line-height: 1.5;
@@ -37,8 +48,9 @@ ul {
     list-style: none;
 }
 
-h1 {
-    font-weight: bold;;
+h1, h2 {
+    font-weight: bold;
+    font-family: var(--test-font-family);
 }
 
 /* nav bar styling */
@@ -60,20 +72,38 @@ header nav ul li {
 header nav ul li a {
     text-decoration: none;
     color: var(--main-font-color);
+    position: relative;
 }
 
-header nav ul li:hover {
-    background-color: black;
+header nav ul li a:after {
+  position: absolute;
+  bottom: -10px;
+  left: 0;
+  right: 0;
+  margin: auto;
+  width: 0%;
+  content: '.';
+  color: transparent;
+  background: var(--main-color);
+  height: 2px;
+  transition: all .5s;
+}
+header nav ul li a:hover:after {
+  width: 100%;
 }
 
 header.scroll {
-    background-color: black;
+    background-color: var(--main-color);
     background: rgb(0 0 0 / 40%);
     box-shadow: 0 0 10px 0 rgba(0, 0, 0, 0.1);
     transition: all .3s linear 0s;
 }
 
 header.scroll nav ul li a {
+    color: var(--light-header-font-color);
+}
+
+header.scroll nav ul li a:hover {
     color: white;
 }
 
@@ -145,17 +175,22 @@ main section.error {
     top: 0;
     width: 100%;
     height: 100%;
-    background-color: white;
+    background-color: var(--main-bg-color);
     align-items: center;
     z-index: 9999;
+}
+
+main section.error a {
+    text-decoration: none;
+    color: var(--main-bg-color);
 }
 
 main section.error button {
     padding: 10px 40px 10px 40px;
     border: none;
     outline: none;
-    background-color: black;
-    color: white;
+    background-color: var(--main-color);
+    color: var(--main-bg-color);
     cursor: pointer;
     border-radius: 30px;
     margin-top: 10px;
@@ -182,42 +217,66 @@ main section.introduction h2 {
     font-family: var(--test-font-family);
 }
 
-
+main section.introduction p {
+    color: var(--dark-paragraph-font-color);
+}
 
 main section.showcase {
-    margin: 20px;
+    width: 100%;
+    background-color: black;
+    border-radius: 1.5rem;
+}
+
+main section.showcase h2 {
+    color: var(--light-header-font-color);
+    font-size: 100px;
+    margin-left: 20px;
 }
 
 main section.showcase ul {
     display: flex;
-    justify-content: space-evenly;
     padding: 10px;
+    overflow-x: auto;
 }
 
 main section.showcase ul li {
-    background-color: whitesmoke;
-    width: 50%;
-    min-height: 200px;
+    background-color: var(--light-container-bg-color);
+    min-width: 30%;
+    max-height: 50%;
     margin: 10px;
     padding: 15px;
     border-radius: 10px;
 }
 
 main section.showcase ul li:hover {
-    /* background-color: red; */
     transform: scale(1.05);
     box-shadow: rgba(0, 0, 0, 0.35) 0px 5px 15px;
 }
 
-main section.aboutme {
-    margin: 20px;
-    display: flex;
+main section.showcase ul li h3 {
+    font-size: 30px;
 }
 
-main section.aboutme img {
-    width: 500px;
-    border-radius: 10px;
-    padding: 10px;
+main section.showcase ul li p {
+    text-wrap: balance;
+    /* text-indent: 3rem; */
+}
+
+main section.aboutme div {
+    background-color: var(--light-container-bg-color);
+    width: 100%;
+    height: 10px;
+}
+
+main section.aboutme h2 {
+    color: var(--main-font-color);
+    font-size: 100px;
+    margin-left: 20px;
+}
+
+main section.aboutme p {
+    color: var(--dark-paragraph-font-color);
+    margin-left: 20px;
 }
 
 button.test {
