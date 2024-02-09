@@ -72,6 +72,58 @@ container {
 }
 ```
 
+sources: 
+- https://codepen.io/studiojvla/pen/qVbQqW
+
+
+### Skeleton loader for loading state
+
+I didn't know how to implement a loading state into my application, because I have never worked with states before, so it was difficult finding out how it works. But it was easier to figure out then I thought.
+
+So here during the fetching of the api data with the try and catch I just made it, so if the data is not picked up in any way it will hide the container and show the placeholder and also the other way around (pretty easy :D).
+
+```js
+async function fetchProjects() {
+    try {
+        const res = await fetch("https://api.github.com/users/Mitchel-DS/repos");
+        const data = await res.json();
+        console.log(data);
+
+        showcaseLoader.style.display = "none";
+        showcase.style.display = "flex";
+
+        const projects = document.querySelector('.showcase ul');
+        data.forEach(project => {
+            const projectContainer = document.createElement('li');
+            projectContainer.classList.add('project');
+
+            const projectName = document.createElement('h3');
+            projectName.innerHTML = project.name;
+            projectContainer.appendChild(projectName);
+
+            const projectDesc = document.createElement('p');
+            projectDesc.innerHTML = project.description;
+            projectContainer.appendChild(projectDesc);
+
+            const projectLink = document.createElement('a');
+            projectLink.innerHTML = "View project";
+            projectLink.href = project.html_url;
+            projectLink.target = "_blank"; // opens the link in a new tab
+            projectContainer.appendChild(projectLink);
+
+            projects.appendChild(projectContainer);
+        });
+    } catch (error) {
+        console.log(error);
+        showcaseLoader.style.display = "flex";
+        showcase.style.display = "none";
+    }
+}
+```
+
+sources: 
+- https://www.freecodecamp.org/news/how-to-build-skeleton-screens-using-css-for-better-user-experience/
+
 ## Feedback 09-02
 
 > *"It could be elaborated more extensively in terms of design. The way of showcasing the projects could be more unique (instead of flex carousel). Show more techniques."*
@@ -79,5 +131,3 @@ container {
 > *"Kan wat uitgebreider worden uitgewerkt qua vormgeving. De manier van het showcasen van de projecten kan wat unieker (ipv flex carousel). Laat meer technieken zien."*
 
 ## Accessibility
-
-## Sources
