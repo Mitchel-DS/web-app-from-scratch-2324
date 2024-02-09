@@ -259,13 +259,19 @@ main section.showcase ul li h3 {
 
 main section.showcase ul li p {
     text-wrap: balance;
-    /* text-indent: 3rem; */
+}
+
+main section.showcase p.showcaseDesc {
+    color: var(--light-paragraph-font-color);
+    margin-left: 20px;
 }
 
 main section.aboutme div {
     background-color: var(--light-container-bg-color);
-    width: 100%;
-    height: 10px;
+    display: inline-block;
+    padding: 20px;
+    margin: 20px;
+    border-radius: 1.5rem;
 }
 
 main section.aboutme h2 {
@@ -276,7 +282,6 @@ main section.aboutme h2 {
 
 main section.aboutme p {
     color: var(--dark-paragraph-font-color);
-    margin-left: 20px;
 }
 
 button.test {
