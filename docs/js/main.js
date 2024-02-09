@@ -1,11 +1,12 @@
-console.log('main.js is connected');
+console.log('main.js is connected'); // checks if the file is connected
 const headerNav = document.querySelector('header');
 const topButton = document.querySelector('.test');
 
+const showcase = document.querySelector('ul.showcase');
+const showcaseLoader = document.querySelector('ul.showcaseLoad');
+
 // Add scroll event to header
 window.addEventListener('scroll', () => {
-    console.log(window.scrollY);
-
     if (window.scrollY > 10) { // checks how far the user has scrolled
         headerNav.classList.add('scroll');
         topButton.style.display = "flex";
@@ -15,11 +16,17 @@ window.addEventListener('scroll', () => {
     }
 });
 
-topButton.addEventListener('click', backTop);  
-
 function backTop() {
     document.documentElement.scrollTop = 0; // brings the user to the top of the page
+
+    if (document.documentElement.scrollTop === 0) {
+        topButton.classList.remove('topClicked');
+    } else {
+        topButton.classList.add('topClicked');
+    }
 }
+
+topButton.addEventListener('click', backTop);
 
 // json variables
 const username = document.querySelector('.aboutme p:nth-child(1)');
@@ -47,33 +54,35 @@ async function fetchProjects() {
         const data = await res.json();
         console.log(data);
 
+        showcaseLoader.style.display = "none";
+        showcase.style.display = "flex";
+
         const projects = document.querySelector('.showcase ul');
         data.forEach(project => {
-        const projectContainer = document.createElement('li');
-        projectContainer.classList.add('project');
+            const projectContainer = document.createElement('li');
+            projectContainer.classList.add('project');
 
-        const projectName = document.createElement('h3');
-        projectName.innerHTML = project.name;
-        projectContainer.appendChild(projectName);
+            const projectName = document.createElement('h3');
+            projectName.innerHTML = project.name;
+            projectContainer.appendChild(projectName);
 
-        const projectDesc = document.createElement('p');
-        projectDesc.innerHTML = project.description;
-        projectContainer.appendChild(projectDesc);
+            const projectDesc = document.createElement('p');
+            projectDesc.innerHTML = project.description;
+            projectContainer.appendChild(projectDesc);
 
-        const projectLink = document.createElement('a');
-        projectLink.innerHTML = "View project";
-        projectLink.href = project.html_url;
-        projectLink.target = "_blank"; // opens the link in a new tab
-        projectContainer.appendChild(projectLink);
+            const projectLink = document.createElement('a');
+            projectLink.innerHTML = "View project";
+            projectLink.href = project.html_url;
+            projectLink.target = "_blank"; // opens the link in a new tab
+            projectContainer.appendChild(projectLink);
 
-        projects.appendChild(projectContainer);
-    });
+            projects.appendChild(projectContainer);
+        });
     } catch (error) {
         console.log(error);
+        showcaseLoader.style.display = "flex";
+        showcase.style.display = "none";
     }
-
-
-    
 }
 
 fetchdata();

@@ -116,7 +116,7 @@ main section {
 
 /* states styling */
 main section.loading {
-    display: flex;
+    display: none;
     flex-direction: column;
     position: fixed;
     top: 0;
@@ -225,6 +225,7 @@ main section.showcase {
     width: 100%;
     background-color: black;
     border-radius: 1.5rem;
+    overflow: hidden;
 }
 
 main section.showcase h2 {
@@ -236,13 +237,41 @@ main section.showcase h2 {
 main section.showcase ul {
     display: flex;
     padding: 10px;
-    overflow-x: auto;
+    overflow: auto;
+    /* animation: scroll 5s linear infinite;
+	width: calc(250px * 14); */
+}
+
+main section.showcase ul.showcaseLoad {
+    display: flex;
+}
+
+main section.showcase ul.showcaseLoad li h3 span {
+    background-color: var(--dark-paragraph-font-color);
+    width: 80%;
+    display: inline-block;
+    height: 1em;
+    position: relative;
+    overflow: hidden;
+}
+
+main section.showcase ul.showcaseLoad li p span {
+    background-color: var(--dark-paragraph-font-color);
+    width: 70%;
+    display: inline-block;
+    height: 1em;
+    position: relative;
+    overflow: hidden;
+}
+
+main section.showcase ul.showcaseLoad li p:nth-child(2) span {
+    width: 60%;
 }
 
 main section.showcase ul li {
     background-color: var(--light-container-bg-color);
-    min-width: 30%;
-    max-height: 50%;
+    min-width: 500px;
+    min-height: 200px;
     margin: 10px;
     padding: 15px;
     border-radius: 10px;
@@ -270,6 +299,11 @@ main section.showcase p.showcaseDesc {
     width: 50%;
     overflow: hidden;
 }
+
+/* @keyframes scroll {
+	0% { transform: translateX(0); }
+	100% { transform: translateX(calc(-250px * 17))}
+} */
 
 main section.aboutme h2 {
     color: var(--main-font-color);
