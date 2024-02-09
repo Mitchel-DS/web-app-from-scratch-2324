@@ -4,7 +4,7 @@ const topButton = document.querySelector('.test');
 
 // Add scroll event to header
 window.addEventListener('scroll', () => {
-    // console.log(window.scrollY);
+    console.log(window.scrollY);
 
     if (window.scrollY > 10) { // checks how far the user has scrolled
         headerNav.classList.add('scroll');
@@ -18,15 +18,15 @@ window.addEventListener('scroll', () => {
 topButton.addEventListener('click', backTop);  
 
 function backTop() {
-    document.documentElement.scrollTop = 0; 
+    document.documentElement.scrollTop = 0; // brings the user to the top of the page
 }
 
 // json variables
-const username = document.querySelector('.aboutme p:nth-child(2)');
-const description = document.querySelector('.aboutme p:nth-child(3)');
-const favoritePet = document.querySelector('.aboutme p:nth-child(4)');
-const favoriteHobby = document.querySelector('.aboutme p:nth-child(5)');
-const github = document.querySelector('.aboutme p:nth-child(6)');
+const username = document.querySelector('.aboutme p:nth-child(1)');
+const description = document.querySelector('.aboutme p:nth-child(2)');
+const favoritePet = document.querySelector('.aboutme p:nth-child(3)');
+const favoriteHobby = document.querySelector('.aboutme p:nth-child(4)');
+const github = document.querySelector('.aboutme p:nth-child(5)');
 
 // Fetch data from json file
 async function fetchdata() {
@@ -49,24 +49,24 @@ async function fetchProjects() {
 
         const projects = document.querySelector('.showcase ul');
         data.forEach(project => {
-        const projectDiv = document.createElement('li');
-        projectDiv.classList.add('project');
+        const projectContainer = document.createElement('li');
+        projectContainer.classList.add('project');
 
         const projectName = document.createElement('h3');
         projectName.innerHTML = project.name;
-        projectDiv.appendChild(projectName);
+        projectContainer.appendChild(projectName);
 
         const projectDesc = document.createElement('p');
         projectDesc.innerHTML = project.description;
-        projectDiv.appendChild(projectDesc);
+        projectContainer.appendChild(projectDesc);
 
         const projectLink = document.createElement('a');
         projectLink.innerHTML = "View project";
         projectLink.href = project.html_url;
-        projectLink.target = "_blank";
-        projectDiv.appendChild(projectLink);
+        projectLink.target = "_blank"; // opens the link in a new tab
+        projectContainer.appendChild(projectLink);
 
-        projects.appendChild(projectDiv);
+        projects.appendChild(projectContainer);
     });
     } catch (error) {
         console.log(error);

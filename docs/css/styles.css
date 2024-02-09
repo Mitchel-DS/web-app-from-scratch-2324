@@ -264,14 +264,11 @@ main section.showcase ul li p {
 main section.showcase p.showcaseDesc {
     color: var(--light-paragraph-font-color);
     margin-left: 20px;
-}
-
-main section.aboutme div {
-    background-color: var(--light-container-bg-color);
-    display: inline-block;
-    padding: 20px;
-    margin: 20px;
-    border-radius: 1.5rem;
+    margin-top: 50px;
+    font-size: 25px;
+    text-indent: 3rem;
+    width: 50%;
+    overflow: hidden;
 }
 
 main section.aboutme h2 {
@@ -280,7 +277,15 @@ main section.aboutme h2 {
     margin-left: 20px;
 }
 
-main section.aboutme p {
+main section.aboutme article {
+    background-color: var(--light-container-bg-color);
+    display: inline-block;
+    padding: 20px;
+    margin: 20px;
+    border-radius: 1.5rem;
+}
+
+main section.aboutme article p {
     color: var(--dark-paragraph-font-color);
 }
 
@@ -299,6 +304,18 @@ button.test {
     border-radius: 10px; 
     font-size: 18px; 
 }
+
+@keyframes toTheTop {
+    0% {
+      transform: translateY(0);
+    }
+    50% {
+      transform: translateY(-10px);
+    }
+    100% {
+      transform: translateY(0);
+    }
+  }
 
 /* footer styling */
 footer {

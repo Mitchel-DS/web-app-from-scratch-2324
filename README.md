@@ -10,6 +10,11 @@ In this course you will learn to build a web application without frameworks or u
 
 Check out the live demo [here.](https://mitchel-ds.github.io/web-app-from-scratch-2324/)
 
+## Teamwork
+
+## Feedback 09-02
+
+## 
 
 ## Log
 
@@ -22,7 +27,8 @@ Check out the live demo [here.](https://mitchel-ds.github.io/web-app-from-scratc
 ![version 2.0](./docs/assets/images/version_2.0.png)
 ![version 2.1](./docs/assets/images/version_2.1.png)
 ![version 2.2](./docs/assets/images/version_2.2.png)
-![version 2.3](./docs/assets/images/version_2.3.png)
 splash screen
+![version 2.3](./docs/assets/images/version_2.3.png)
+error page
 ![version 2.4](./docs/assets/images/version_2.4.png)
 
