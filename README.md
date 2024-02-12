@@ -131,3 +131,21 @@ sources:
 > *"Kan wat uitgebreider worden uitgewerkt qua vormgeving. De manier van het showcasen van de projecten kan wat unieker (ipv flex carousel). Laat meer technieken zien."*
 
 ## Accessibility
+
+## Checklist
+
+[] Clean vanilla HTML, CSS and JS.
+[] Diverse content?
+[] Detailed micro-interaction (with JS).
+[] Data connection (API call).
+[] Data for team app (json file).
+[] Application is accessible.
+[] Professional design.
+[] Responsive
+[] Documented
+
+## To do (as much as possible)
+[] Style the coursel 
+[] Fix the infinite scroll carousel?
+[x] Add skeleton loader for the loading state.
+[] Add error state
