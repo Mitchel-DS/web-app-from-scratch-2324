@@ -61,6 +61,11 @@ header {
     width: 100%;
 }
 
+header img.menu {
+    height: 50px;
+    display: none;
+}
+
 header nav ul {
     display: flex;
     padding: 10px;
@@ -354,7 +359,7 @@ button.test {
     position: fixed;
     bottom: 20px;
     right: 30px;
-    z-index: 99;
+    z-index: 60;
     border: none;
     outline: none;
     color: white;
@@ -398,6 +403,38 @@ footer p {
 
 /* responsive styling */
 @media (max-width: 768px) {
+    header {
+        z-index: 99;
+    }
+
+    header img.menu {
+        display: flex;
+        position: absolute;
+        cursor: pointer;
+    }
+
+    header nav ul {
+        display: none;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+        background-color: var(--main-color);
+        height: 98vh;
+        border-radius: 1rem;
+    }
+
+    header nav ul li {
+        margin: 0;
+        margin-bottom: 10px;
+    }
+
+    header nav ul li a {
+        color: var(--light-header-font-color);
+        font-size: 50px;
+        font-family: var(--test-font-family);
+
+    }
+
     main section.introduction h1 {
         font-size: 70px;
     }

@@ -5,10 +5,24 @@ const topButton = document.querySelector('.test');
 const showcase = document.querySelector('ul.showcase');
 const showcaseLoader = document.querySelector('ul.showcaseLoad');
 
+const nav = document.querySelector('header nav ul');
+const navMenu = document.querySelector('.menu');
+const navItem = document.querySelector('.menu a')
+
+navMenu.addEventListener('click', () => {
+    if (nav.style.display == 'none') {
+        nav.style.display == 'flex';
+     } else {
+            nav.style.display == 'none';
+        }
+});
+
 // Add scroll event to header
 window.addEventListener('scroll', () => {
-    if (window.scrollY > 10) { // checks how far the user has scrolled
+    if (window.scrollY > 10 && window.innerWidth >= 768) { // checks how far the user has scrolled and if its NOT  mobile
         headerNav.classList.add('scroll');
+        topButton.style.display = "flex";
+    } else if (window.scrollY > 10 && window.innerWidth <= 768) { // if it is mobile only the button will work
         topButton.style.display = "flex";
     } else {
         headerNav.classList.remove('scroll');
@@ -29,8 +43,8 @@ function backTop() {
 topButton.addEventListener('click', backTop);
 
 // json variables
-const username = document.querySelector('.aboutme p:nth-child(1)');
-const description = document.querySelector('.aboutme p:nth-child(2)');
+const firstName = document.querySelector('.aboutme p:nth-child(1)');
+const lastName = document.querySelector('.aboutme p:nth-child(2)');
 const favoritePet = document.querySelector('.aboutme p:nth-child(3)');
 const favoriteHobby = document.querySelector('.aboutme p:nth-child(4)');
 const github = document.querySelector('.aboutme p:nth-child(5)');
@@ -38,14 +52,11 @@ const github = document.querySelector('.aboutme p:nth-child(5)');
 // Fetch data from json file
 async function fetchdata() {
 
-    const response = await fetch("./app.json");
+    const response = await fetch("./info.json");
     const data = await response.json();
 
-    username.innerHTML += data.name;
-    description.innerHTML += data.description;
-    favoritePet.innerHTML += data.favoritePets[1];
-    favoriteHobby.innerHTML += data.hobbys[2];
-    github.innerHTML += data.github;
+    firstName.innerHTML += data.firstName;
+    lastName.innerHTML += data.lastName;
 }
 
 async function fetchProjects() {
