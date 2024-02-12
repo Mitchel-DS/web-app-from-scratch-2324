@@ -51,6 +51,7 @@ async function fetchdata() {
 async function fetchProjects() {
     try {
         const res = await fetch("https://api.github.com/users/Mitchel-DS/repos");
+        // https://github.com/Mitchel-DS/web-app-from-scratch-2324/blob/main/docs/assets/images/banner.png
         const data = await res.json();
         console.log(data);
 

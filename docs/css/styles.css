@@ -111,7 +111,6 @@ header.scroll nav ul li a:hover {
 
 main section {
     padding-top: 90px;
-    height: 100vh;
 }
 
 /* states styling */
@@ -219,6 +218,12 @@ main section.introduction h2 {
 
 main section.introduction p {
     color: var(--dark-paragraph-font-color);
+    font-size: 20px;
+}
+
+main section.introduction img {
+    height: 30px;
+    margin-top: .3em;
 }
 
 main section.showcase {
@@ -226,6 +231,7 @@ main section.showcase {
     background-color: black;
     border-radius: 1.5rem;
     overflow: hidden;
+    height: 100vh;
 }
 
 main section.showcase h2 {
@@ -300,10 +306,9 @@ main section.showcase p.showcaseDesc {
     overflow: hidden;
 }
 
-/* @keyframes scroll {
-	0% { transform: translateX(0); }
-	100% { transform: translateX(calc(-250px * 17))}
-} */
+main section.aboutme {
+    height: 50vh;
+}
 
 main section.aboutme h2 {
     color: var(--main-font-color);
@@ -366,4 +371,46 @@ footer section {
 
 footer p {
     width: 50%;
+}
+
+/* responsive styling */
+@media (max-width: 768px) {
+    main section.introduction h2 {
+        line-height: .8;
+        margin-top: .3em;
+    }
+
+    main section.introduction p {
+        margin-top: .5em;
+        margin-bottom: .5em;
+        width: 80%;
+        line-height: .8;
+    }
+
+    main section.showcase h2 {
+        font-size: 50px;
+    }
+
+    main section.showcase ul li {
+        min-width: 350px;
+        min-height: 200px;
+    }
+
+    main section.showcase p.showcaseDesc {
+        width: 90%;
+        font-size: 20px;
+        text-indent: 1rem;
+    }
+
+    main section.aboutme h2 {
+        font-size: 50px;
+    }
+
+    main section.aboutme article {
+        min-width: 350px;
+    }
+
+    footer p {
+        width: 90%;
+    }
 }

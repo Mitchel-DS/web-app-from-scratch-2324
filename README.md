@@ -149,3 +149,4 @@ sources:
 [] Fix the infinite scroll carousel?
 [x] Add skeleton loader for the loading state.
 [] Add error state
+[] Add animations
