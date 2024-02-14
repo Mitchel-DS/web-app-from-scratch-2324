@@ -7,12 +7,13 @@
     "hobbies" : [
         "Gaming", 
         "Reading manga", 
-        "Listening to music"
+        "Listening to music",
+        "Drawing"
     ],
     "truthsAndLies" : [
         "I went to Japan",
-         "I have a dog",
-        "I'm a vegetarian"],
+        "I don't like chocolate",
+        "I collect Yu-Gi-Oh! cards"],
     "bio" : "YUURR, I'm literally him.",
-    "favouriteAnimal" : "Duck"
+    "favouriteAnimal" : "Ducks"
 }
