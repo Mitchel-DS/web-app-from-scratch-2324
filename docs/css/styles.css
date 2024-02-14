@@ -122,7 +122,7 @@ main section {
 
 /* states styling */
 main section.loading {
-    display: none;
+    display: flex;
     flex-direction: column;
     position: fixed;
     top: 0;
@@ -144,6 +144,10 @@ main section.loading h2 {
     color: white;
     font-size: 30px;
     font-family: var(--test-font-family);
+}
+
+main section.loading h2 {
+    color: var(--light-paragraph-font-color);
 }
 
 @keyframes lift {
@@ -341,12 +345,23 @@ main section.aboutme h2 {
     margin-left: 20px;
 }
 
+main section.aboutme div {
+    display: flex;
+}
+
+main section.aboutme img {
+    height: 400px;
+    margin: 20px;
+    border-radius: 1.5rem;
+}
+
 main section.aboutme article {
     background-color: var(--light-container-bg-color);
     display: inline-block;
     padding: 20px;
     margin: 20px;
     border-radius: 1.5rem;
+    width: 80%;
 }
 
 main section.aboutme article p {
@@ -408,7 +423,7 @@ footer p {
     }
 
     header nav section {
-        background-color: red;
+        background-color: var(--alt-font-color);
         height: 50px;
         width: 50px;
         border-radius: 50%;
@@ -418,10 +433,9 @@ footer p {
 
     header nav img.menu {
         display: flex;
-        /* position: absolute; */
         cursor: pointer;
-        /* margin: 25px; */
-        height: 30px;
+        margin: 13px;
+        height: 24px;
     }
 
     header nav ul {
@@ -481,11 +495,16 @@ footer p {
         font-size: 50px;
     }
 
+    main section.aboutme div {
+        flex-direction: column;
+    }
+
     main section.aboutme article {
         min-width: 350px;
     }
 
     footer p {
         width: 90%;
+        margin-top: 50px;
     }
 }

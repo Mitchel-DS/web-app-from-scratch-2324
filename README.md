@@ -148,6 +148,7 @@ sources:
 [] Style the coursel 
 [] Fix the infinite scroll carousel?
 [x] Add skeleton loader for the loading state.
-[] Add error state
+[x] Add error state
 [] Add animations
-[] Fix nav timing
+[x] Fix nav timing
+[] check for accesibility options
