@@ -34,6 +34,7 @@
 /* global styles */
 html {
     scroll-behavior: smooth;
+    scroll-snap-type: y mandatory;
 }
 
 body {
@@ -118,6 +119,7 @@ header.scroll nav ul li a:hover {
 
 main section {
     padding-top: 90px;
+    scroll-snap-align: start;
 }
 
 /* states styling */
