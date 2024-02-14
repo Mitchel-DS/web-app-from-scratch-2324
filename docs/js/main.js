@@ -6,16 +6,32 @@ const showcase = document.querySelector('ul.showcase');
 const showcaseLoader = document.querySelector('ul.showcaseLoad');
 
 const nav = document.querySelector('header nav ul');
-const navMenu = document.querySelector('.menu');
-const navItem = document.querySelector('.menu a')
+
+const navMenu = document.querySelector('header nav .menu');
+
+window.onload = function() {
+    if (window.innerWidth <= 768) {
+        nav.style.display = 'none';
+    } else {
+            console.log('lmao');
+        }
+    };
 
 navMenu.addEventListener('click', () => {
-    if (nav.style.display == 'none') {
-        nav.style.display == 'flex';
-     } else {
-            nav.style.display == 'none';
-        }
+    if (nav.style.display === 'none') {
+        nav.style.display = 'flex';
+    } else {
+        nav.style.display = 'none';
+    }
 });
+
+const navItem = document.querySelectorAll('header nav ul li a');
+for (var i = 0; i < navItem.length; i++) {
+    navItem[i].addEventListener('click', () => {
+        // Your code here
+        nav.style.display = 'none';
+    });
+}
 
 // Add scroll event to header
 window.addEventListener('scroll', () => {

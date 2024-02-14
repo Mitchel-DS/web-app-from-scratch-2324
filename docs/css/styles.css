@@ -407,10 +407,21 @@ footer p {
         z-index: 99;
     }
 
-    header img.menu {
-        display: flex;
+    header nav section {
+        background-color: red;
+        height: 50px;
+        width: 50px;
+        border-radius: 50%;
         position: absolute;
+        margin: 20px;
+    }
+
+    header nav img.menu {
+        display: flex;
+        /* position: absolute; */
         cursor: pointer;
+        /* margin: 25px; */
+        height: 30px;
     }
 
     header nav ul {

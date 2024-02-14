@@ -150,3 +150,4 @@ sources:
 [x] Add skeleton loader for the loading state.
 [] Add error state
 [] Add animations
+[] Fix nav timing

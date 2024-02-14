@@ -1,4 +1,18 @@
-{
+{                  
     "firstName" : "Mitchel",
-    "lastName" : "Staal"
+    "lastName" : "Staal",
+    "avatar_url" : "",
+    "age" : 24,
+    "city" : "Amsterdam",
+    "hobbies" : [
+        "Gaming", 
+        "Reading manga", 
+        "Listening to music"
+    ],
+    "truthsAndLies" : [
+        "I went to Japan",
+         "I have a dog",
+        "I'm a vegetarian"],
+    "bio" : "YUURR, I'm literally him.",
+    "favouriteAnimal" : "Duck"
 }
