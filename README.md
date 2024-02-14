@@ -10,85 +10,26 @@ In this course you will learn to build a web application without frameworks or u
 
 Check out the live demo [here.](https://mitchel-ds.github.io/web-app-from-scratch-2324/)
 
-
 ## Log
 
-### Version 1
+![Home](/docs/assets/images/home.png)
+![Showcase](/docs/assets/images/showcase.png)
+![Aboutme](/docs/assets/images/aboutme.png)
 
-![version 1.0](./docs/assets/images/version_1.0.png)
-![version 1.1](./docs/assets/images/version_1.1.png)
-![version 1.2](./docs/assets/images/version_1.2.png)
-
-### Version 2
-
-![version 2.0](./docs/assets/images/version_2.0.png)
-![version 2.1](./docs/assets/images/version_2.1.png)
-![version 2.2](./docs/assets/images/version_2.2.png)
-
-splash screen
-![version 2.3](./docs/assets/images/version_2.3.png)
-error page
-![version 2.4](./docs/assets/images/version_2.4.png)
-
-## Issues
-
-### Back to top micro interaction
-
-I tried to give the top button some micro interaction, by giving it an animation during the duration of the page scroll back up. It didn't really go to well. 
-
-```js
-function backTop() {
-    document.documentElement.scrollTop = 0; // brings the user to the top of the page
-
-    if (document.documentElement.scrollTop === 0) {
-        topButton.classList.remove('topClicked');
-    } else {
-        topButton.classList.add('topClicked');
-    }
-}
-```
-Here is the function that brings the user back up, and I wanted to give the button a class, so I could play the animation, but it doesn't remove the class right after, because it only checks when clicked on (it's a eventlistener that checks the scroll.)
-
-### Infinite scroll carousel
-
-Here I tried making an infinite scroll carousel, where you could still scroll back and see, but I just couldn't figure out the proper calculation to make it fit the width and where it would reset.
-
-```css
-container {
-    animation: scroll 5s linear infinite;
-	width: calc(250px * 14);
-}
-```
-
-```js
-@keyframes scroll {
-	0% { transform: translateX(0); }
-	100% { transform: translateX(calc(-250px * 17))}
-}
-```
-
-sources: 
-- https://codepen.io/studiojvla/pen/qVbQqW
-
-
-### Skeleton loader for loading state
-
-I didn't know how to implement a loading state into my application, because I have never worked with states before, so it was difficult finding out how it works. But it was easier to figure out then I thought.
-
-So here during the fetching of the api data with the try and catch I just made it, so if the data is not picked up in any way it will hide the container and show the placeholder and also the other way around (pretty easy :D).
+## Github REST API 
 
 ```js
 async function fetchProjects() {
     try {
-        const res = await fetch("https://api.github.com/users/Mitchel-DS/repos");
+        const res = await fetch("https://api.github.com/users/Mitchel-DS/repos"); // fetches repos from github
         const data = await res.json();
         console.log(data);
 
-        showcaseLoader.style.display = "none";
-        showcase.style.display = "flex";
+        showcaseLoader.style.display = "none"; // hides the skeleton loader
+        showcase.style.display = "flex"; // shows the project cards
 
-        const projects = document.querySelector('.showcase ul');
-        data.forEach(project => {
+        const projects = document.querySelector('.showcase ul'); // selects the ul to append the projects to
+        data.forEach(project => { // loops through the projects
             const projectContainer = document.createElement('li');
             projectContainer.classList.add('project');
 
@@ -106,27 +47,16 @@ async function fetchProjects() {
             projectLink.target = "_blank"; // opens the link in a new tab
             projectContainer.appendChild(projectLink);
 
-            projects.appendChild(projectContainer);
+            projects.appendChild(projectContainer); // appends the project to the ul
         });
     } catch (error) {
         console.log(error);
-        showcaseLoader.style.display = "flex";
-        showcase.style.display = "none";
+        showcaseLoader.style.display = "flex"; // shows the skeleton loader
+        showcase.style.display = "none"; // hides the project cards
     }
 }
 ```
 
-sources: 
-- https://www.freecodecamp.org/news/how-to-build-skeleton-screens-using-css-for-better-user-experience/
-
-## Feedback 09-02
-
-> *"It could be elaborated more extensively in terms of design. The way of showcasing the projects could be more unique (instead of flex carousel). Show more techniques."*
-
-> *"Kan wat uitgebreider worden uitgewerkt qua vormgeving. De manier van het showcasen van de projecten kan wat unieker (ipv flex carousel). Laat meer technieken zien."*
-
-## Accessibility
-
-## Data 
+## Features checklist
 
 ## Sources
