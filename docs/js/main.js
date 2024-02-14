@@ -94,13 +94,13 @@ async function fetchProjects() {
     try {
         const res = await fetch("https://api.github.com/users/Mitchel-DS/repos"); // fetches repos from github
         const data = await res.json();
-        console.log(data);
 
         showcaseLoader.style.display = "none"; // hides the skeleton loader
         showcase.style.display = "flex"; // shows the project cards
 
         const projects = document.querySelector('.showcase ul'); // selects the ul to append the projects to
         data.forEach(project => { // loops through the projects
+            console.log(project.topics);
             const projectContainer = document.createElement('li');
             projectContainer.classList.add('project');
 
