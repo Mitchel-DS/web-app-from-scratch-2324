@@ -18,6 +18,8 @@ Check out the live demo [here.](https://mitchel-ds.github.io/web-app-from-scratc
 
 ## Github REST API 
 
+Fetching data from the Github REST API to showcase my repositories.
+
 ```js
 async function fetchProjects() {
     try {
@@ -57,6 +59,31 @@ async function fetchProjects() {
 }
 ```
 
+## Accessibility
+
+I tested my website on the accessibility, on a few aspects (for more details check wiki).
+
+- The website is fully tabable, with logical tab navigation.
+- Focused elements get an outline.
+- All the buttons have aria-labels, in case of a screen reader.
+- It should be as semantic as possible.
+
 ## Features checklist
+### achieved
+- Github REST API integration
+- json data fetching
+- Loading animation
+- Skeleton loader
+- Responsive mobile design
+- Back to top button
+
+### dropped
+- Infinite scroll carousel (while also scrollable)
 
 ## Sources
+- Skeleton Loader Example – How to Build a Skeleton Screen with CSS for Better UX. https://www.freecodecamp.org/news/how-to-build-skeleton-screens-using-css-for-better-user-experience/
+- [CSS] Infinite autoplay carousel. https://codepen.io/studiojvla/pen/qVbQqW
+- GitHub REST API documentation. https://docs.github.com/en/rest?apiVersion=2022-11-28
+- Getting started with the REST API. https://docs.github.com/en/rest/using-the-rest-api/getting-started-with-the-rest-api?apiVersion=2022-11-28
+- Responsive Navigation with Hamburger Menu - CSS And JavaScript Tutorial. https://www.youtube.com/watch?v=ydZc17rlR5E
+- Using the Fetch API - Web APIs https://developer.mozilla.org/en-US/docs/Web/API/Fetch_API/Using_Fetch
