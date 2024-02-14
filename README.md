@@ -10,11 +10,6 @@ In this course you will learn to build a web application without frameworks or u
 
 Check out the live demo [here.](https://mitchel-ds.github.io/web-app-from-scratch-2324/)
 
-## Teamwork
-
-In the first week we were mostly working on our personal applications. During the first few days we thought of what the general idea of our team application would be and what needed to be included in our own application.
-
-Besides that, the teamwork went fine. Nothing too special. Everyone did their best and delivered their work on time, so nothing to complain about.
 
 ## Log
 
@@ -132,23 +127,6 @@ sources:
 
 ## Accessibility
 
-## Checklist
+## Data 
 
-[] Clean vanilla HTML, CSS and JS.
-[] Diverse content?
-[] Detailed micro-interaction (with JS).
-[] Data connection (API call).
-[] Data for team app (json file).
-[] Application is accessible.
-[] Professional design.
-[] Responsive
-[] Documented
-
-## To do (as much as possible)
-[] Style the coursel 
-[] Fix the infinite scroll carousel?
-[x] Add skeleton loader for the loading state.
-[x] Add error state
-[] Add animations
-[x] Fix nav timing
-[] check for accesibility options
+## Sources
