@@ -13,6 +13,9 @@ const navItem = document.querySelectorAll('header nav ul li a');
 
 // Add event listener to the nav menu
 window.onload = function () {
+    // setTimeout(function() {
+    //     document.documentElement.scrollTop = 0;
+    // }, 5000);
     if (window.innerWidth <= 768) { // checks if the window is mobile
         nav.style.display = 'none'; // hides the nav bar
     } else {

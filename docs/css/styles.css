@@ -124,7 +124,7 @@ main section {
 
 /* states styling */
 main section.loading {
-    display: none;
+    display: flex;
     flex-direction: column;
     position: fixed;
     top: 0;
