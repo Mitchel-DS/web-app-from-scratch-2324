@@ -124,7 +124,7 @@ main section {
 
 /* states styling */
 main section.loading {
-    display: flex;
+    display: none;
     flex-direction: column;
     position: fixed;
     top: 0;
@@ -311,7 +311,13 @@ main section.showcase ul li {
     min-height: 200px;
     margin: 10px;
     padding: 15px;
-    border-radius: 10px;
+    /* border-radius: 10px; */
+
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    align-items: center;
+    box-shadow: rgba(0, 0, 0, 0.35) 0px 5px 15px;
 }
 
 main section.showcase ul li:hover {
@@ -321,10 +327,20 @@ main section.showcase ul li:hover {
 
 main section.showcase ul li h3 {
     font-size: 30px;
+    text-align: center;
 }
 
 main section.showcase ul li p {
     text-wrap: balance;
+    text-align: center;
+}
+
+main section.showcase ul li a {
+    text-decoration: none;
+    background-color: var(--main-color);
+    padding: 10px;
+    border-radius: 2rem;
+    color: var(--light-header-font-color);
 }
 
 main section.showcase p.showcaseDesc {
@@ -380,11 +396,16 @@ button.test {
     border: none;
     outline: none;
     color: white;
-    background: rgb(0 0 0 / 40%);
+    background-color: var(--alt-font-color);
     cursor: pointer;
     padding: 15px;
-    border-radius: 10px;
+    border-radius: 50%;
     font-size: 18px;
+}
+
+button.test img {
+    height: 30px;
+    transform: rotate(180deg);
 }
 
 @keyframes toTheTop {
